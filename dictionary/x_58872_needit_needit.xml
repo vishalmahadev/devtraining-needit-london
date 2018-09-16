@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element display="true" label="Date" max_length="40" name="date" read_only="true" type="glide_date"/>
+        <element label="Name" max_length="100" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Requested Department" max_length="40" name="u_choice_3" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human Resources" sequence="0" value="human resources"/>
+                <element inactive_on_update="false" label="IT" sequence="1" value="it"/>
+                <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
+                <element inactive_on_update="false" label="Payroll" sequence="3" value="payroll"/>
+            </choice>
+        </element>
+        <element label="Requested On" max_length="40" name="u_glide_date_time_1" type="glide_date_time"/>
+        <element dependent="name" dependent_on_field="name" label="Requested Item" max_length="32" name="u_reference_2" reference="incident" type="reference" use_dependent_field="true"/>
+    </element>
+</database>
